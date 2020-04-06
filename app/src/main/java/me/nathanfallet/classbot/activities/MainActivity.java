@@ -16,11 +16,16 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import io.github.luizgrp.sectionedrecyclerviewadapter.SectionedRecyclerViewAdapter;
 import me.nathanfallet.classbot.R;
+import me.nathanfallet.classbot.interfaces.HomeContainer;
 import me.nathanfallet.classbot.models.APIList;
 import me.nathanfallet.classbot.models.APIRequest;
 import me.nathanfallet.classbot.models.APIResponseStatus;
+import me.nathanfallet.classbot.models.Cours;
+import me.nathanfallet.classbot.models.Devoirs;
+import me.nathanfallet.classbot.sections.CoursSection;
+import me.nathanfallet.classbot.sections.MoreSection;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements HomeContainer {
 
     private APIList list;
 
@@ -40,7 +45,8 @@ public class MainActivity extends AppCompatActivity {
 
         // Initialize sections
         sectionAdapter = new SectionedRecyclerViewAdapter();
-
+        sectionAdapter.addSection(new CoursSection(this));
+        sectionAdapter.addSection(new MoreSection(this));
 
         // Bind adapter to recyclerView
         recyclerView.setAdapter(sectionAdapter);
@@ -124,5 +130,15 @@ public class MainActivity extends AppCompatActivity {
         } else {
             super.onActivityResult(requestCode, resultCode, data);
         }
+    }
+
+    @Override
+    public Cours[] getCours() {
+        return list != null ? list.cours : new Cours[0];
+    }
+
+    @Override
+    public Devoirs[] getDevoirs() {
+        return list != null ? list.devoirs : new Devoirs[0];
     }
 }
