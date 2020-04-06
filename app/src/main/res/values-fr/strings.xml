@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="name">ClassBot</string>
+    <string name="cours">Cours</string>
+    <string name="devoirs">Devoirs</string>
+    <string name="chargement">Chargement&#8230;</string>
+    <string name="configuration">Configuration</string>
+    <string name="more">Plus</string>
+    <string name="delta">Application pour les mathématiques</string>
+    <string name="cancel">Annuler</string>
+    <string name="ok">OK</string>
+    <string name="hostlabel">Entrez l\'hôte du serveur ClassBot :</string>
+    <string name="hostfield">hôte du serveur…</string>
+    <string name="submitbutton">Ajouter</string>
+    <string name="verification">Vérification…</string>
+    <string name="instructionsbutton">Instructions d\'installation du serveur</string>
+    <string name="error_host_title">Hôte invalide !</string>
+    <string name="error_host_description">L\'hôte que vous avez entrez est invalide ou n\'est pas une instance de ClassBot. Contactez votre administrateur si vous avez besoin d\'aide pour récupérer l\'hôte du serveur.</string>
+</resources>
