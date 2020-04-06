@@ -9,14 +9,15 @@ import android.widget.TextView;
 import me.nathanfallet.classbot.extensions.DateExtension;
 import me.nathanfallet.classbot.extensions.IntExtension;
 import me.nathanfallet.classbot.extensions.StringExtension;
-import me.nathanfallet.classbot.models.Cours;
+import me.nathanfallet.classbot.models.Devoirs;
 
-public class CoursCell extends LinearLayout {
+public class DevoirsCell extends LinearLayout {
 
     private TextView name;
     private TextView date;
+    private TextView content;
 
-    public CoursCell(Context context) {
+    public DevoirsCell(Context context) {
         // Init linearLayout
         super(context);
 
@@ -37,7 +38,7 @@ public class CoursCell extends LinearLayout {
         // Init name
         name = new TextView(context);
         LayoutParams nameParams = new LinearLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
-        nameParams.setMargins(dp16, dp16, dp4, dp16);
+        nameParams.setMargins(dp16, dp16, dp4, dp4);
         name.setLayoutParams(nameParams);
         name.setTextSize(TypedValue.COMPLEX_UNIT_SP, 16);
         name.setTextColor(getResources().getColor(android.R.color.black));
@@ -46,22 +47,32 @@ public class CoursCell extends LinearLayout {
         // Init date
         date = new TextView(context);
         LayoutParams dateParams = new LinearLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
-        dateParams.setMargins(0, dp16, dp16, dp16);
+        dateParams.setMargins(0, dp16, dp16, dp4);
         date.setLayoutParams(dateParams);
         date.setTextSize(TypedValue.COMPLEX_UNIT_SP, 16);
         date.setTextColor(getResources().getColor(android.R.color.black));
         date.setTextAlignment(TEXT_ALIGNMENT_VIEW_END);
 
+        // Init content
+        content = new TextView(context);
+        LayoutParams contentParams = new LinearLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
+        contentParams.setMargins(dp16, 0, dp16, dp16);
+        content.setLayoutParams(contentParams);
+        content.setTextSize(TypedValue.COMPLEX_UNIT_SP, 16);
+        content.setTextColor(getResources().getColor(android.R.color.black));
+
         // Add them to layout
         horizontal.addView(name);
         horizontal.addView(date);
         addView(horizontal);
+        addView(content);
         addView(new Separator(context));
     }
 
-    public void with(Cours cours) {
-        name.setText(cours.name);
-        date.setText(DateExtension.toRenderedString(StringExtension.toDate(cours.start)));
+    public void with(Devoirs devoirs) {
+        name.setText(devoirs.name);
+        date.setText(DateExtension.toRenderedString(StringExtension.toDate(devoirs.due)));
+        content.setText(devoirs.content);
     }
 
 }

@@ -23,6 +23,7 @@ import me.nathanfallet.classbot.models.APIResponseStatus;
 import me.nathanfallet.classbot.models.Cours;
 import me.nathanfallet.classbot.models.Devoirs;
 import me.nathanfallet.classbot.sections.CoursSection;
+import me.nathanfallet.classbot.sections.DevoirsSection;
 import me.nathanfallet.classbot.sections.MoreSection;
 
 public class MainActivity extends AppCompatActivity implements HomeContainer {
@@ -46,6 +47,7 @@ public class MainActivity extends AppCompatActivity implements HomeContainer {
         // Initialize sections
         sectionAdapter = new SectionedRecyclerViewAdapter();
         sectionAdapter.addSection(new CoursSection(this));
+        sectionAdapter.addSection(new DevoirsSection(this));
         sectionAdapter.addSection(new MoreSection(this));
 
         // Bind adapter to recyclerView
