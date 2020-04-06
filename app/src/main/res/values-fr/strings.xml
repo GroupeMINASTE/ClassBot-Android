@@ -9,11 +9,11 @@
     <string name="delta">Application pour les mathématiques</string>
     <string name="cancel">Annuler</string>
     <string name="ok">OK</string>
-    <string name="hostlabel">Entrez l\'hôte du serveur ClassBot :</string>
-    <string name="hostfield">hôte du serveur…</string>
-    <string name="submitbutton">Ajouter</string>
+    <string name="hostLabel">Entrez l\'hôte du serveur ClassBot :</string>
+    <string name="hostField">hôte du serveur…</string>
+    <string name="submitButton">Ajouter</string>
     <string name="verification">Vérification…</string>
-    <string name="instructionsbutton">Instructions d\'installation du serveur</string>
+    <string name="instructionsButton">Instructions d\'installation du serveur</string>
     <string name="error_host_title">Hôte invalide !</string>
     <string name="error_host_description">L\'hôte que vous avez entrez est invalide ou n\'est pas une instance de ClassBot. Contactez votre administrateur si vous avez besoin d\'aide pour récupérer l\'hôte du serveur.</string>
 </resources>
